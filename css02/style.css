@@ -1,0 +1,157 @@
+/* Estilos Gerais e do Corpo */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+main {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+h1, h2, h3, h4 {
+    color: #1a237e; /* Azul escuro */
+}
+
+a {
+    color: #303f9f;
+    text-decoration: none;
+}
+
+/* E. Menu de Navegação */
+.menu-navegacao {
+    background-color: #1a237e;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.menu-navegacao ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+.menu-navegacao li {
+    display: inline-block;
+    margin: 0 20px;
+}
+.menu-navegacao a {
+    color: white;
+    font-weight: bold;
+}
+
+/* A. Cabeçalho */
+header {
+    background-image: url('banner.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+}
+header h1 {
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    font-size: 3rem;
+}
+header h2 {
+    color: white;
+    font-style: italic;
+    font-weight: normal;
+}
+
+/* B. Seção "Destaque da Semana" */
+#destaque .card-destaque {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    display: flex;
+    gap: 20px;
+}
+#destaque .card-destaque img {
+    max-width: 250px;
+    border-radius: 5px;
+}
+#destaque .card-destaque ul {
+    list-style-type: square;
+    padding-left: 20px;
+}
+
+/* C. Grade de Filmes (Catálogo) */
+#catalogo {
+    background-color: #e8eaf6; /* Fundo diferente do body */
+    padding: 20px;
+    border-radius: 8px;
+}
+.grade-filmes {
+    display: flex; /* Usando Flexbox para alinhar os cards */
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+.card-filme {
+    background-color: white;
+    border: 1px solid #ccc; /* Borda sutil */
+    border-radius: 8px; /* Cantos arredondados */
+    padding: 15px;
+    width: 200px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.card-filme img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+/* D. Tabela de Lançamentos */
+#lancamentos table {
+    width: 100%;
+    border-collapse: collapse; /* Bordas colapsadas */
+    margin-top: 20px;
+}
+#lancamentos th, #lancamentos td {
+    border: 1px solid #ccc;
+    padding: 12px; /* Espaçamento interno */
+    text-align: left;
+}
+#lancamentos thead th {
+    background-color: #3f51b5; /* Cabeçalho destacado */
+    color: white;
+}
+#lancamentos tbody tr:nth-child(even) {
+    background-color: #e8eaf6; /* Linhas alternadas */
+}
+
+/* F. Seção "Sobre/Contato" (Rodapé) */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 30px;
+    margin-top: 40px;
+    border-radius: 8px;
+}
+footer h3 {
+    color: #c5cae9;
+}
+.imagem-flutuante {
+    float: right; /* Imagem flutuando à direita */
+    width: 100px;
+    margin-left: 20px;
+    border-radius: 50%;
+}
+.links-sociais a {
+    color: #8c9eff;
+    margin-right: 15px;
+    font-weight: bold;
+}
+.links-sociais a:hover, .links-sociais a:focus {
+    text-decoration: underline; /* Efeito hover/focus */
+    color: #ffffff;
+}

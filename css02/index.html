@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineCatálogo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- E. Menu de Navegação -->
+    <nav class="menu-navegacao">
+        <ul>
+            <li><a href="#destaque">Destaque</a></li>
+            <li><a href="#catalogo">Catálogo</a></li>
+            <li><a href="#lancamentos">Lançamentos</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+        </ul>
+    </nav>
+
+    <!-- A. Cabeçalho -->
+    <header>
+        <h1>CineCatálogo</h1>
+        <h2>O seu universo de filmes em um só lugar.</h2>
+    </header>
+
+    <main>
+        <!-- B. Seção "Destaque da Semana" -->
+        <section id="destaque">
+            <h3>Destaque da Semana</h3>
+            <div class="card-destaque">
+                <img src="poster-destaque.jpg" alt="Pôster do filme em destaque">
+                <div class="info-destaque">
+                    <h4>F1 (2025)</h4>
+                    <strong>Sinopse:</strong>
+                    <p>Sonny Hayes, ex-piloto de Fórmula 1, é recrutado por um amigo dono de equipe para mentorar um jovem prodígio e salvar a escuderia da falência, enfrentando rivalidades intensas e riscos mortais nas pistas.</p>
+                    <strong>Gêneros:</strong>
+                    <ul>
+                        <li>Ação</li>
+                        <li>Drama</li>
+                        <li>Esporte</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- C. Grade de Filmes (Catálogo) -->
+        <section id="catalogo">
+            <h3>Catálogo Completo</h3>
+            <div class="grade-filmes">
+                <!-- Card de Filme 1 -->
+                <div class="card-filme">
+                    <img src="poster-1.jpg" alt="Pôster Filme 1">
+                    <a href="#"><h4>O Menino e a Garça</h4></a>
+                    <p>Ano: 2023 | Gênero: Animação, Aventura, Fantasia</p>
+                </div>
+                <!-- Card de Filme 2 -->
+                <div class="card-filme">
+                    <img src="poster-2.jpg" alt="Pôster Filme 2">
+                    <a href="#"><h4>Ainda Estou Aqui</h4></a>
+                    <p>Ano: 2024 | Gênero: Biografia, Drama, História</p>
+                </div>
+                <!-- Card de Filme 3 -->
+                <div class="card-filme">
+                    <img src="poster-3.jpg" alt="Pôster Filme 3">
+                    <a href="#"><h4>Homem-Aranha: Através do Aranhaverso</h4></a>
+                    <p>Ano: 2023 | Gênero: Animação, Ação, Aventura</p>
+                </div>
+                <!-- Card de Filme 4 -->
+                <div class="card-filme">
+                    <img src="poster-4.jpg" alt="Pôster Filme 4">
+                    <a href="#"><h4>Nada de Novo no Front</h4></a>
+                    <p>Ano: 2022 | Gênero: Drama, Guerra</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- D. Tabela de Lançamentos -->
+        <section id="lancamentos">
+            <h3>Tabela de Lançamentos e Prêmios</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Filme</th>
+                        <th>Ano</th>
+                        <th>Nota (IMDb)</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Ainda Estou Aqui</td>
+                        <td>2024</td>
+                        <td>8.1</td>
+                        <td>Disponível em cinemas e VOD</td>
+                    </tr>
+                    <tr>
+                        <td>F1</td>
+                        <td>2025</td>
+                        <td>7.7</td>
+                        <td>Apple TV+</td>
+                    </tr>
+                    <tr>
+                        <td>Homem-Aranha: Através do Aranhaverso</td>
+                        <td>2023</td>
+                        <td>8.6</td>
+                        <td>Netflix, Amazon Prime Video</td>
+                    </tr>
+                    <tr>
+                        <td>Nada de Novo no Front</td>
+                        <td>2022</td>
+                        <td>7.9</td>
+                        <td>Netflix</td>
+                    </tr>
+                    <tr>
+                        <td>O Menino e a Garça</td>
+                        <td>2023</td>
+                        <td>7.6</td>
+                        <td>Netflix</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- F. Seção "Sobre/Contato" -->
+        <footer id="sobre">
+            <h3>Sobre o CineCatálogo</h3>
+            <img class="imagem-flutuante" src="sobre-imagem.png" alt="Logo ou imagem ilustrativa sobre cinema">
+            <p>O CineCatálogo é um projeto de estudo desenvolvido para aplicar os conceitos de CSS aprendidos no curso de Desenvolvimento Web I. Aqui, exploramos a estilização de cores, fontes, bordas, espaçamentos, e o uso de display flex para criar layouts responsivos e agradáveis. Todo o conteúdo é fictício e serve apenas para fins educacionais.</p>
+            <p>Conecte-se conosco nas redes sociais:</p>
+            <div class="links-sociais">
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+                <a href="#">X (Twitter)</a>
+            </div>
+        </footer>
+    </main>
+
+</body>
+</html>
