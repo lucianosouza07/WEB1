@@ -1,0 +1,38 @@
+{
+  "Frutas": [
+    "ABACAXI",
+    "MELANCIA",
+    "BANANA",
+    "MORANGO",
+    "UVA",
+    "LARANJA",
+    "PERA",
+    "MANGA",
+    "GOIABA",
+    "CEREJA"
+  ],
+  "Animais": [
+    "CACHORRO",
+    "GATO",
+    "ELEFANTE",
+    "GIRAFA",
+    "LEAO",
+    "TIGRE",
+    "MACACO",
+    "JACARE",
+    "COBRA",
+    "PASSARO"
+  ],
+  "Objetos": [
+    "CADEIRA",
+    "MESA",
+    "COMPUTADOR",
+    "TELEFONE",
+    "LIVRO",
+    "CANETA",
+    "GARRAFA",
+    "JANELA",
+    "PORTA",
+    "CARRO"
+  ]
+}

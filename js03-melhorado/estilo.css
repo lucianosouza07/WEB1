@@ -1,0 +1,273 @@
+/*
+  DEFINIÇÕES GLOBAIS E VARIÁVEIS CSS
+  :root permite definir variáveis globais que podem ser usadas em todo o documento.
+  Isso facilita a manutenção e a alteração de temas.
+*/
+:root {
+    --cor-fundo-gradiente: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --cor-container: #ffffff;
+    --cor-sombra: rgba(0, 0, 0, 0.1);
+    --cor-texto-principal: #333;
+    --cor-texto-secundario: #666;
+    --cor-primaria: #6a11cb;
+    --cor-secundaria: #2575fc;
+    --cor-feedback-sucesso: #28a745;
+    --cor-feedback-erro: #dc3545;
+    --fonte-principal: 'Poppins', sans-serif;
+    --raio-borda: 12px;
+}
+
+/*
+  RESET BÁSICO E ESTILOS GERAIS DO BODY
+  - box-sizing: border-box torna o modelo de caixa mais intuitivo.
+  - margin: 0 e padding: 0 removem os espaçamentos padrão do navegador.
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fonte-principal);
+    background: var(--cor-fundo-gradiente);
+    color: var(--cor-texto-principal);
+    /* Usa flexbox para centralizar o contêiner do jogo vertical e horizontalmente */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/*
+  ESTILO DO CONTÊINER PRINCIPAL DO JOGO
+  - Estilizado como um "card" branco com bordas arredondadas e sombra.
+*/
+.game-container {
+    background-color: var(--cor-container);
+    padding: 2.5rem;
+    border-radius: var(--raio-borda);
+    box-shadow: 0 10px 25px var(--cor-sombra);
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    /* Adiciona uma animação de fade-in ao carregar */
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Animação para o contêiner aparecer suavemente */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animação de "tremor" para feedback de erro */
+.shake {
+    animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+h1 {
+    font-size: 2rem;
+    color: var(--cor-primaria);
+    margin-bottom: 1.5rem;
+}
+
+/* ESTILOS DAS SEÇÕES INTERNAS */
+.status-section, .gameplay-section, .historico-section {
+    margin-bottom: 1.5rem;
+}
+
+.status-bar {
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: var(--cor-texto-secundario);
+}
+
+#vidas-display {
+    color: var(--cor-feedback-erro); /* Corações em vermelho */
+    letter-spacing: 2px; /* Espaçamento entre os corações */
+}
+
+/* Mensagem de feedback (Muito Alto/Baixo, Acertou, etc.) */
+.mensagem {
+    font-weight: 600;
+    margin-top: 1rem;
+    min-height: 24px; /* Garante que a altura não mude quando a mensagem some */
+    transition: color 0.3s ease;
+}
+
+/* Classes de cor para as mensagens de feedback */
+.mensagem.sucesso {
+    color: var(--cor-feedback-sucesso);
+}
+.mensagem.erro {
+    color: var(--cor-feedback-erro);
+}
+.mensagem.dica {
+    color: var(--cor-secundaria);
+}
+
+/* SEÇÃO DE JOGABILIDADE (INPUT, BOTÕES) */
+#selecao-dificuldade p {
+    margin-bottom: 1rem;
+    color: var(--cor-texto-secundario);
+}
+
+.difficulty-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Espaço entre os botões */
+    flex-wrap: wrap; /* Permite que os botões quebrem a linha em telas menores */
+}
+
+/* Estilo base para todos os botões */
+button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: var(--raio-borda);
+    font-family: var(--fonte-principal);
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Botões de dificuldade */
+.btn-dificuldade {
+    background-color: #f0f0f0;
+    color: var(--cor-texto-principal);
+    border: 2px solid transparent;
+}
+
+.btn-dificuldade:hover {
+    background-color: #e0e0e0;
+    border-color: var(--cor-primaria);
+}
+
+/* Botão principal de "Chutar" */
+#btn-chutar {
+    background: var(--cor-primaria);
+    color: white;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+#btn-chutar:hover {
+    background: var(--cor-secundaria);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+#btn-chutar:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Campo de entrada de número */
+#input-chute {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: var(--raio-borda);
+    font-size: 1.2rem;
+    text-align: center;
+    font-family: var(--fonte-principal);
+}
+
+#input-chute:focus {
+    outline: none;
+    border-color: var(--cor-primaria);
+    box-shadow: 0 0 0 3px rgba(106, 17, 203, 0.2);
+}
+
+/* Remove as setas do input tipo number (opcional, mas limpa a UI) */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* SEÇÃO DE HISTÓRICO */
+.historico-section h3 {
+    margin-bottom: 0.5rem;
+    color: var(--cor-texto-secundario);
+    font-weight: 600;
+}
+
+#lista-historico {
+    background-color: #f9f9f9;
+    border-radius: var(--raio-borda);
+    padding: 1rem 1rem 1rem 2.5rem; /* Espaço para os números da lista */
+    max-height: 150px;
+    overflow-y: auto; /* Adiciona barra de rolagem se a lista for longa */
+    text-align: left;
+    list-style: decimal; /* Estilo de lista numerada */
+}
+
+#lista-historico li {
+    padding: 4px 0;
+    border-bottom: 1px solid #eee;
+}
+
+#lista-historico li:last-child {
+    border-bottom: none;
+}
+
+/* Classe utilitária para esconder elementos */
+.hidden {
+    display: none;
+}
+
+/* RODAPÉ */
+footer {
+    margin-top: 2rem;
+    color: white;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/*
+  MEDIA QUERIES PARA RESPONSIVIDADE
+  Ajusta o padding do contêiner em telas menores para melhor aproveitamento do espaço.
+*/
+@media (max-width: 550px) {
+    .game-container {
+        padding: 1.5rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .difficulty-buttons {
+        flex-direction: column; /* Empilha os botões verticalmente */
+    }
+}

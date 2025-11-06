@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!-- Define o documento como HTML5 e o idioma como Português do Brasil -->
+<html lang="pt-BR">
+<head>
+    <!-- Configurações essenciais de metadados -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivinhe o Número!</title>
+
+    <!-- Importação da fonte 'Poppins' do Google Fonts para um design mais moderno -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Link para a folha de estilos CSS externa -->
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    
+    <!-- O contêiner principal do jogo, que será estilizado como um "card" -->
+    <main class="game-container">
+        <!-- Cabeçalho do jogo -->
+        <header>
+            <h1>Adivinhe o Número</h1>
+        </header>
+
+        <!-- Seção de status, mostrando vidas restantes e mensagens de feedback -->
+        <section class="status-section">
+            <div id="status-vidas" class="status-bar">
+                <span>Vidas:</span>
+                <!-- O conteúdo das vidas (corações) será inserido aqui pelo JavaScript -->
+                <span id="vidas-display"></span> 
+            </div>
+            <!-- Elemento para exibir mensagens de feedback como "Muito alto!", "Muito baixo!", etc. -->
+            <p id="mensagem-feedback" class="mensagem"></p>
+        </section>
+
+        <!-- Seção principal da jogabilidade -->
+        <section class="gameplay-section">
+            <!-- Div para a seleção de dificuldade, visível no início -->
+            <div id="selecao-dificuldade">
+                <p>Escolha a dificuldade para começar:</p>
+                <div class="difficulty-buttons">
+                    <!-- Botões para selecionar os níveis de dificuldade -->
+                    <button class="btn-dificuldade" data-dificuldade="facil">Fácil (1-25)</button>
+                    <button class="btn-dificuldade" data-dificuldade="medio">Médio (1-100)</button>
+                    <button class="btn-dificuldade" data-dificuldade="dificil">Difícil (1-200)</button>
+                </div>
+            </div>
+
+            <!-- Div do jogo principal, que fica oculta até uma dificuldade ser escolhida -->
+            <div id="jogo-principal" class="hidden">
+                <!-- Parágrafo que informa ao jogador o intervalo do número secreto -->
+                <p id="texto-instrucao">Adivinhe o número!</p>
+                
+                <!-- Formulário para entrada do palpite do jogador -->
+                <form id="form-chute">
+                    <input type="number" id="input-chute" placeholder="Seu palpite" required>
+                    <button type="submit" id="btn-chutar">Chutar</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Seção para exibir o histórico de palpites do jogador -->
+        <section class="historico-section">
+            <h3>Histórico de Palpites</h3>
+            <!-- A lista ordenada será preenchida com os palpites via JavaScript -->
+            <ol id="lista-historico"></ol>
+        </section>
+    </main>
+
+    <!-- Rodapé da página -->
+    <footer>
+      <p>&copy; 2025 - Jogo Adivinhe o Número</p>
+    </footer>
+
+    <!-- Link para o arquivo JavaScript que contém a lógica do jogo -->
+    <script src="interacao.js"></script>
+</body>
+</html>

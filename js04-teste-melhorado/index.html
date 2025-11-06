@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivinhe a Palavra 2.0</title>
+    <!-- Importa a fonte Poppins do Google Fonts para um visual mais moderno -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Link para a folha de estilos CSS -->
+    <link rel="stylesheet" href="estilo.css">
+</head>
+
+<body>
+    <!-- Container principal que centraliza todo o conteúdo do jogo -->
+    <div class="game-container">
+        <header>
+            <h1>Adivinhe a Palavra</h1>
+        </header>
+
+        <!-- Tela Inicial: onde o jogador escolhe a categoria -->
+        <section id="tela-inicial" class="tela ativa">
+            <h2>Escolha uma categoria para começar</h2>
+            <div id="box-categorias">
+                <!-- Os botões das categorias serão inseridos aqui dinamicamente pelo JavaScript -->
+            </div>
+        </section>
+
+        <!-- Tela de Jogo: onde a adivinhação acontece -->
+        <section id="tela-jogo" class="tela">
+            <!-- Box para exibir informações como vidas e contagem de palavras -->
+            <div id="info-jogo">
+                <p id="contador-palavras">Palavra 1 / 10</p>
+                <p id="vidas-restantes">Vidas: ❤️❤️❤️❤️❤️❤️</p>
+            </div>
+            <!-- Box da imagem do boneco -->
+            <div id="box-imagem">
+                <img src="assets/menino1.png" id="img-menino" alt="Boneco do jogo da forca">
+            </div>
+            <!-- Box onde a palavra a ser adivinhada é exibida -->
+            <div id="box-palavra">
+                <p id="palavra"></p>
+            </div>
+            <!-- Box para mensagens de feedback (ex: "Letra incorreta!") -->
+            <div id="box-mensagem">
+                <p id="mensagem"></p>
+            </div>
+            <!-- Container para o teclado virtual -->
+            <div id="box-teclado">
+                <!-- As teclas serão geradas dinamicamente pelo JavaScript -->
+            </div>
+        </section>
+
+        <!-- Tela Final (Modal): exibida no final do jogo -->
+        <div id="tela-final" class="modal-overlay">
+            <div class="modal-content">
+                <h2 id="mensagem-final"></h2>
+                <p id="palavra-revelada"></p>
+                <button id="btn-jogar-novamente">Jogar Novamente</button>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p id="txtRodape">Desenvolvido na disciplina WEB1 - Versão Melhorada</p>
+    </footer>
+
+    <!-- Link para o script JavaScript -->
+    <script src="interacao.js"></script>
+</body>
+
+</html>

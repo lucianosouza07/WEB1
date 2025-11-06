@@ -1,0 +1,271 @@
+/* Definição de variáveis de cores e fontes para fácil manutenção do tema */
+:root {
+    --cor-fundo: #121212;
+    --cor-container: #1e1e1e;
+    --cor-display: #2a2a2a;
+    --cor-texto: #e0e0e0;
+    --cor-primaria: #6200ea;
+    --cor-primaria-hover: #7f39fb;
+    --cor-sucesso: #03dac6;
+    --cor-erro: #cf6679;
+    --fonte-principal: 'Poppins', sans-serif;
+}
+
+/* Reset básico e configurações globais do corpo da página */
+body {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    font-family: var(--fonte-principal);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box; /* Garante que padding não afete a largura total */
+}
+
+/* Estilização do container principal do jogo */
+.game-container {
+    background-color: var(--cor-container);
+    width: 100%;
+    max-width: 600px; /* Largura máxima para telas maiores */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    text-align: center;
+}
+
+header h1 {
+    color: var(--cor-primaria);
+    margin-bottom: 20px;
+}
+
+/* Estilos para as seções (telas) do jogo */
+.tela {
+    display: none; /* Por padrão, todas as telas estão escondidas */
+    flex-direction: column;
+    gap: 15px;
+    animation: fadeIn 0.5s ease-in-out; /* Animação de surgimento */
+}
+
+.tela.ativa {
+    display: flex; /* A tela com a classe 'ativa' é exibida */
+}
+
+/* Animação para o surgimento suave das telas */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Estilos para a tela inicial de seleção de categorias */
+#tela-inicial h2 {
+    margin-bottom: 10px;
+}
+
+#box-categorias {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Estilo dos botões de categoria */
+.btn-categoria {
+    background-color: var(--cor-primaria);
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-categoria:hover {
+    background-color: var(--cor-primaria-hover);
+    transform: translateY(-2px);
+}
+
+/* Estilos da tela de jogo */
+#info-jogo {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    padding: 0 10px;
+    color: #aaa;
+}
+
+#box-imagem {
+    height: 150px;
+    margin: 10px auto;
+}
+
+#img-menino {
+    height: 100%;
+    width: auto;
+    transition: transform 0.3s ease; /* Transição suave para animações */
+}
+
+/* Animação de "tremor" para quando o jogador erra */
+#img-menino.shake {
+    animation: shake 0.5s;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+    20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+/* Estilos dos displays da palavra e da mensagem */
+#box-palavra, #box-mensagem {
+    background-color: var(--cor-display);
+    border-radius: 10px;
+    min-height: 50px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+#palavra {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 1.8rem;
+    letter-spacing: 8px; /* Espaçamento entre as letras/traços */
+}
+
+#mensagem {
+    font-size: 1rem;
+    font-style: italic;
+    color: #ccc;
+}
+
+/* Estilos do teclado virtual */
+#box-teclado {
+    text-align: center;
+    height: auto;
+    width: 100%;
+    margin: auto;
+    gap: 6px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.tecla {
+    background-color: #3e3e3e;
+    color: var(--cor-texto);
+    font-weight: 600;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    width: 40px; /* Tamanho fixo para melhor alinhamento */
+    height: 45px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.tecla:hover {
+    background-color: #555;
+    transform: scale(1.05);
+}
+
+.tecla:disabled {
+    cursor: not-allowed;
+    transform: none;
+    opacity: 0.6;
+}
+
+/* Estilos para teclas corretas e incorretas */
+.tecla.correta {
+    background-color: var(--cor-sucesso);
+    color: #121212;
+}
+
+.tecla.incorreta {
+    background-color: var(--cor-erro);
+    color: #121212;
+}
+
+/* Estilos para o modal de fim de jogo */
+.modal-overlay {
+    position: fixed; /* Fica sobre toda a tela */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none; /* Escondido por padrão */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s;
+}
+
+.modal-overlay.ativa {
+    display: flex; /* Mostra o modal */
+}
+
+.modal-content {
+    background-color: var(--cor-container);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    max-width: 90%;
+}
+
+#btn-jogar-novamente {
+    background-color: var(--cor-primaria);
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#btn-jogar-novamente:hover {
+    background-color: var(--cor-primaria-hover);
+}
+
+/* Estilo do rodapé */
+footer {
+    margin-top: 20px;
+    color: #777;
+    font-size: 0.8rem;
+}
+
+/* Media Query para responsividade em telas menores */
+@media (max-width: 480px) {
+    #palavra {
+        font-size: 1.2rem;
+        letter-spacing: 6px;
+    }
+
+    .tecla {
+        width: 30px;
+        height: 40px;
+        font-size: 0.9rem;
+        padding: 5px;
+    }
+}
